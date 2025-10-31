@@ -1,0 +1,155 @@
+:root {
+    --header1: rgb(42, 52, 65);
+    --header2: rgb(49, 65, 87);
+    --body: rgb(243, 243, 243);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--body);
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* HEADER SECTION */
+
+/* Movie Expolorer at the top */
+h1 { 
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+    padding: 5rem;
+    text-align: center;
+    background-color: var(--header1);
+}
+
+header {
+    background: var(--header2);
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;;
+    padding: 2rem;
+}
+
+/* search and sort: */
+header input, 
+header select {
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-radius: 6px;
+    border: none;
+    color: black;
+}
+
+header input:focus,
+header select:focus {
+    border: 2px solid rgb(14, 99, 255);
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+
+/* MOVIE CARD SECTION: */
+
+/* the movie cards */
+#movie-container {
+    display: grid;
+    grid-template-columns: repeat(5, 335px);
+    gap: 1.75rem;
+    padding: 1.3rem;
+    justify-content: center; 
+}
+
+.movie {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgb(207, 207, 207);
+    text-align: center;
+    padding-bottom: 3.25rem;
+    overflow: hidden;
+}
+
+/* movie picture */
+.movie img {
+    width: 100%;
+    height: auto;
+    border-radius: 3.7rem;
+    border: 30px solid white;
+    display: block;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+/* movie name */
+.movie h3 {
+    color: black;
+    font-size: 1.6rem;
+    margin: 0.3rem;
+    font-weight: bolder;
+}
+
+/* release dates and ratings */
+.movie p {
+    font-size: 1.25rem;
+    color: black;
+    padding: 12px;
+}
+
+@media (max-width: 1400px) {
+    #movie-container {
+        grid-template-columns: repeat(4, 335px);
+    }
+}
+
+@media (max-width: 1100px) {
+    #movie-container {
+        grid-template-columns: repeat(3, 335px);
+    }
+}
+
+@media (max-width: 800px) {
+    #movie-container {
+        grid-template-columns: repeat(2, 335px);
+    }
+}
+
+@media (max-width: 500px) {
+    #movie-container {
+        grid-template-columns: 335px;
+    }
+}
+
+
+/* FOOTER SECTION: */
+
+/* footer with page nunbers */
+footer {
+    background: var(--body);
+    color: black;
+    padding: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* the previous and next buttons */
+footer button {
+    border: none;
+    background: rgb(77, 169, 255);
+    color: white;
+    padding: 0.5rem .9rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+footer button:hover {
+    background: rgb(62, 136, 206);
+}
